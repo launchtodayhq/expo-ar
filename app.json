@@ -10,14 +10,19 @@
     "newArchEnabled": true,
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.paullaunchtoday.expoar"
+      "bundleIdentifier": "com.paullaunchtoday.expoar",
+      "infoPlist": {
+        "NSCameraUsageDescription": "This app uses the camera for AR measurements",
+        "NSMotionUsageDescription": "This app uses device motion for AR features"
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.paullaunchtoday.expoar"
+      "package": "com.paullaunchtoday.expoar",
+      "permissions": ["CAMERA"]
     },
     "web": {
       "bundler": "metro",
@@ -33,6 +38,12 @@
           "imageWidth": 200,
           "resizeMode": "contain",
           "backgroundColor": "#ffffff"
+        }
+      ],
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Allow $(PRODUCT_NAME) to access your camera to take measurements using AR."
         }
       ]
     ],
